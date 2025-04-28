@@ -74,11 +74,4 @@ This project is licensed exclusively for users of **Nitent Node**  services.
 
 ---
 
-# ✅ Final Touches:
-- Professional Heading and Structure ✅  
-- Raju mentioned as the Owner ✅  
-- Installation Command clearly in the front ✅  
-- Version 1 added ✅  
-- Official Discords and Website ✅  
-- Important Warning added professionally ✅
 

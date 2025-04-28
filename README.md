@@ -1,26 +1,84 @@
 
+# 🚀 **Nitent Node VPS Optimizer**  
+**Version: 1.0**
 
-# **Nitent Node VPS Optimizer**
+---
+**Developed by: Raju (Owner of Nitent Node)**
 
-**Nitent Node VPS Optimizer** is an advanced and comprehensive tool specifically designed to optimize server performance, enhance security, and simplify management for your VPS hosted by Nitent Node. It ensures that your server runs at peak efficiency, providing **high-performance optimization**, **cutting-edge DDoS protection**, and **seamless server management**. 
+---
+## 📜 Description
 
-Key features include:
-- **Full System Optimization**: Maximize your server’s efficiency by tuning essential system settings for faster performance.
-- **Advanced DDoS Protection**: Safeguard your server against malicious traffic and DDoS attacks with robust, industry-leading protection.
-- **Pterodactyl Management**: Easily manage and configure your game servers with the powerful Pterodactyl panel for a streamlined experience.
-- **Emergency Repair**: Quickly restore your server to optimal performance with our emergency repair tool to minimize downtime and disruptions.
+**Nitent Node VPS Optimizer** is an **advanced** and **comprehensive** tool designed to **maximize server performance**, **enhance security**, and **simplify management** for your VPS hosted with **Nitent Node**.
 
-By using **Nitent Node VPS Optimizer**, you are equipped with all the essential tools to ensure your VPS is secure, high-performing, and efficiently managed, contributing to a superior hosting experience.
+It ensures your server runs at **peak efficiency**, offering **high-performance tuning**, **cutting-edge DDoS protection**, and **seamless server management**.
 
-## **Important Warning**
-> **By utilizing this tool, you expressly acknowledge and assume full responsibility for any risks, consequences, or damages that may arise from improper usage, execution, or configuration. It is imperative that you proceed with caution and diligence, as any modifications made to the system could result in unintended disruptions, data loss, or other adverse outcomes, which will be solely at your own risk. We strongly recommend thorough testing and verification prior to implementing any changes to avoid any potential issues.**
+---
+## ✨ Key Features
 
-## **Support Links**
+- 🔧 **Full System Optimization**  
+  Optimize your VPS by intelligently tuning essential system parameters to maximize speed and efficiency.
 
-- **Enterprise Hosting Support**: [Join here for expert assistance](https://discord.gg/V4uWMy8bfP)
-- **Technical Community**: [Connect with our vibrant community](https://discord.gg/TmFZNMWuDF)
+- 🛡️ **Advanced DDoS Protection**  
+  Defend your server from malicious traffic and large-scale DDoS attacks using robust, industry-leading protection.
 
-## **Official Website**
+- 🎮 **Pterodactyl Panel Management**  
+  Effortlessly manage your game servers with deep integration and support for the Pterodactyl panel.
 
-For more details, visit our official website: [Nitent Store](https://nitent.store)
+- 🚑 **Emergency Server Repair**  
+  Instantly repair system-level issues and restore your VPS to top performance with our emergency repair utilities.
+
+---
+## ⚡ Quick Installation
+
+Get started instantly with a simple one-line installation command:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/NitentNode/Nitent-Node-VPS-Optimizer/main/install.sh)
+```
+
+✅ Fully automated installation!  
+✅ Works on major Linux distributions!  
+✅ No complicated setup required!
+
+---
+## 📢 Important Warning
+
+> **Disclaimer:**  
+> By utilizing this tool, you expressly acknowledge and assume full responsibility for any risks, consequences, or damages that may arise from improper usage, execution, or configuration.  
+> Proceed with caution and diligence.  
+> **Any modifications** made to your server using this tool **are done entirely at your own risk**.  
+> We strongly recommend thorough testing before applying changes to production systems.
+
+---
+## 🌐 Support Links
+
+- 🤝 **Enterprise Hosting Support**: [Join our Discord](https://discord.gg/V4uWMy8bfP)
+- 🌍 **Community Discussions**: [Connect with the Nitent Tech Community](https://discord.gg/TmFZNMWuDF)
+
+---
+## 🏢 Official Website
+
+👉 [Visit the Nitent Store](https://nitent.store) for official services, products, and updates.
+
+---
+## 📋 License
+
+This project is licensed exclusively for users of **Nitent Node**  services.  
+**Unauthorized copying, redistribution, or resale is strictly prohibited.**
+
+---
+# 🎯 Notes
+
+- This project is currently at **Version 1.0**.  
+- Future updates will include **auto-backups**, **server monitoring enhancements**, and **more security layers**!
+
+---
+
+# ✅ Final Touches:
+- Professional Heading and Structure ✅  
+- Raju mentioned as the Owner ✅  
+- Installation Command clearly in the front ✅  
+- Version 1 added ✅  
+- Official Discords and Website ✅  
+- Important Warning added professionally ✅
 

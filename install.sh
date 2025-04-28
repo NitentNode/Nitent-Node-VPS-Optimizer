@@ -11,53 +11,41 @@ CYAN='\033[1;36m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Define installation directory
+INSTALL_DIR="/opt/nitent-node-vps-optimizer"
+
 # Cool Loading Animation
 function loading_animation() {
     echo -ne "${CYAN}Processing"
     for i in {1..5}; do
         echo -ne "."
-        sleep 0.4
+        sleep 0.3
     done
     echo -e "${NC}"
 }
 
-# Clear screen and show beautiful big banner
-clear
-echo -e "${BLUE}"
-echo "╔═══════════════════════════════════════════════════╗"
-echo "║             🚀 NITENT NODE VPS OPTIMIZER 🚀         ║"
-echo "╠═══════════════════════════════════════════════════╣"
-echo "║     Powerful, Fast, and Smart VPS Optimization!    ║"
-echo "╚═══════════════════════════════════════════════════╝"
-echo -e "${NC}"
-echo -e "${YELLOW}Welcome to the Nitent Node VPS Optimizer Setup!${NC}"
-echo ""
+# Beautiful Big Banner
+function show_banner() {
+    clear
+    echo -e "${BLUE}"
+    echo "╔══════════════════════════════════════════════════════════════════╗"
+    echo "║                                                                  ║"
+    echo "║          🚀🚀  WELCOME TO NITENT NODE VPS OPTIMIZER 🚀🚀         ║"
+    echo "║                                                                  ║"
+    echo "╠══════════════════════════════════════════════════════════════════╣"
+    echo "║      The Fastest, Smartest, and Most Powerful VPS Booster!        ║"
+    echo "╚══════════════════════════════════════════════════════════════════╝"
+    echo -e "${NC}"
+    echo ""
+}
 
-# Check if already installed
-INSTALL_DIR="/opt/nitent-node-vps-optimizer"
-
-if [ -d "$INSTALL_DIR" ]; then
-    echo -e "${GREEN}Detected existing installation at $INSTALL_DIR${NC}"
-else
-    echo -e "${RED}No existing installation found.${NC}"
-fi
-
-# Menu
-echo "Choose an option:"
-echo -e "${GREEN}1) Install / Fresh Setup${NC}"
-echo -e "${GREEN}2) Update (Reinstall Latest Version)${NC}"
-echo -e "${GREEN}3) Delete Nitent Node VPS Optimizer${NC}"
-echo ""
-read -p "Enter your choice (1/2/3): " choice
-
-if [ "$choice" == "1" ]; then
-    echo -e "${BLUE}Starting Installation...${NC}"
-    loading_animation
-
-    # Remove if already there
+# Install or Update Optimizer
+function install_or_update() {
     if [ -d "$INSTALL_DIR" ]; then
-        echo -e "${YELLOW}Previous installation found. Removing...${NC}"
+        echo -e "${YELLOW}Previous installation found. Updating...${NC}"
         rm -rf "$INSTALL_DIR"
+    else
+        echo -e "${GREEN}No previous installation found. Installing fresh...${NC}"
     fi
 
     echo -e "${GREEN}Installing dependencies...${NC}"
@@ -66,41 +54,24 @@ if [ "$choice" == "1" ]; then
     echo -e "${GREEN}Cloning repository...${NC}"
     git clone https://github.com/NitentNode/Nitent-Node-VPS-Optimizer.git "$INSTALL_DIR"
 
-    echo -e "${GREEN}Setting up Nitent Node VPS Optimizer...${NC}"
+    echo -e "${GREEN}Setting up...${NC}"
     cd "$INSTALL_DIR"
     chmod +x nitent.sh
 
     echo ""
-    echo -e "${CYAN}Installation completed successfully!${NC}"
+    echo -e "${CYAN}Installation/Update completed successfully!${NC}"
+}
+
+# Start Optimizer
+function start_optimizer() {
     echo -e "${YELLOW}Launching Nitent Node VPS Optimizer...${NC}"
     sleep 2
-    ./nitent.sh
-
-elif [ "$choice" == "2" ]; then
-    echo -e "${BLUE}Updating (Reinstalling) Nitent Node VPS Optimizer...${NC}"
-    loading_animation
-
-    if [ -d "$INSTALL_DIR" ]; then
-        echo -e "${YELLOW}Removing old version...${NC}"
-        rm -rf "$INSTALL_DIR"
-    fi
-
-    echo -e "${GREEN}Installing dependencies...${NC}"
-    apt update && apt install -y curl wget git
-
-    echo -e "${GREEN}Cloning latest repository...${NC}"
-    git clone https://github.com/NitentNode/Nitent-Node-VPS-Optimizer.git "$INSTALL_DIR"
-
-    echo -e "${GREEN}Setup complete!${NC}"
     cd "$INSTALL_DIR"
-    chmod +x nitent.sh
-
-    echo ""
-    echo -e "${YELLOW}Launching updated Nitent Node VPS Optimizer...${NC}"
-    sleep 2
     ./nitent.sh
+}
 
-elif [ "$choice" == "3" ]; then
+# Delete Optimizer
+function delete_optimizer() {
     echo -e "${RED}Deleting Nitent Node VPS Optimizer...${NC}"
     loading_animation
 
@@ -110,6 +81,40 @@ elif [ "$choice" == "3" ]; then
     else
         echo -e "${RED}No installation found to delete.${NC}"
     fi
+}
+
+# Run the Banner
+show_banner
+
+# Menu
+echo "Choose an option:"
+echo -e "${GREEN}1) Install / Fresh Setup${NC}"
+echo -e "${GREEN}2) Update (Reinstall Latest Version)${NC}"
+echo -e "${GREEN}3) Delete Nitent Node VPS Optimizer${NC}"
+echo -e "${GREEN}4) Start Optimization (Auto Install/Update + Start)${NC}"
+echo ""
+read -p "Enter your choice (1/2/3/4): " choice
+
+if [ "$choice" == "1" ]; then
+    echo -e "${BLUE}Starting Installation...${NC}"
+    loading_animation
+    install_or_update
+    start_optimizer
+
+elif [ "$choice" == "2" ]; then
+    echo -e "${BLUE}Starting Update (Reinstall)...${NC}"
+    loading_animation
+    install_or_update
+    start_optimizer
+
+elif [ "$choice" == "3" ]; then
+    delete_optimizer
+
+elif [ "$choice" == "4" ]; then
+    echo -e "${BLUE}Starting Optimization Process...${NC}"
+    loading_animation
+    install_or_update
+    start_optimizer
 
 else
     echo -e "${RED}Invalid choice! Exiting.${NC}"
